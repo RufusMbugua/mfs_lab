@@ -13,8 +13,9 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return ('hello');
+    {   
+        $customers = Customer::all();
+        return view('customers.list',compact('customers'));
     }
 
     /**
@@ -23,8 +24,9 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        
+        return view('customers.view');
     }
 
     /**
@@ -35,7 +37,9 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $uuid = Customer::create($request->all())->id;
+
+         return response($uuid);
     }
 
     /**

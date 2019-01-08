@@ -14,8 +14,8 @@ class CreateCreditScoresTable extends Migration
     public function up()
     {
         Schema::create('credit_scores', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('customer_id');
+            $table->uuid('id');
+            $table->uuid('customer_id');
             $table->double('score');
             $table->timestamps();
         });
