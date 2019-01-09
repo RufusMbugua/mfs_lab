@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('customers','CustomerController@create');
-Route::get('loans','LoanController@create');
+Route::get('customers','CustomerController@list')->name('customers.list');
+Route::get('loans','LoanController@list')->name('loans.list');

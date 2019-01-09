@@ -15,6 +15,11 @@ class CustomerController extends Controller
     public function index()
     {   
         $customers = Customer::all();
+        return response($customers);
+    }
+
+    public function list(){
+        $customers = Customer::all();
         return view('customers.list',compact('customers'));
     }
 
@@ -83,7 +88,15 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Customer $customer)
-    {
-        //
+    {   
+        dd($customer);
+        if($customer->delete()){
+            return 'Record Deleted';
+        }
+    }
+
+
+    public function getLoanStatus(){
+
     }
 }

@@ -19,6 +19,7 @@ class CreateCustomersTable extends Migration
             $table->text('first_name');
             $table->text('last_name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

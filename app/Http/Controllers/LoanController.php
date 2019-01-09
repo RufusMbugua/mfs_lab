@@ -14,7 +14,13 @@ class LoanController extends Controller
      */
     public function index()
     {
-        //
+        $loans = Loan::with('customer')->get();
+        return response($loans);
+    }
+
+    public function list(){
+        $loans = Loan::with('customer')->get();
+        return view('loans.list',compact('loans'));
     }
 
     /**
@@ -35,7 +41,9 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $uuid = Loan::create($request->all())->id;
+
+         return response($uuid);
     }
 
     /**

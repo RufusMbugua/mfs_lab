@@ -18,6 +18,7 @@ class CreateLoansTable extends Migration
             $table->uuid('customer_id');
             $table->double('amount');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

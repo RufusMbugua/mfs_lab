@@ -18,6 +18,7 @@ class CreateCreditScoresTable extends Migration
             $table->uuid('customer_id');
             $table->double('score');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

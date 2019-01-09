@@ -47,13 +47,13 @@
               </a>
             </li>
             <li>
-              <a href="{{ route('customers.index') }}">
+              <a href="{{ route('customers.list') }}">
                 <i class="material-icons text-warning">person</i>
                 <span>Customers</span>
               </a>
             </li>
             <li>
-              <a href=" {{ route('loans.index') }}">
+              <a href=" {{ route('loans.list') }}">
                 <i class="material-icons text-success">attach_money</i>
                 <span>Loans</span>
               </a>
